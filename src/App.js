@@ -13,8 +13,8 @@ function App() {
     e.preventDefault();
     setVisitorName(image.name);
     const visitorImageName = uuid.v4();
-    fetch(`https://4le3m8fqmg.execute-api.us-east-1.amazonaws.com/dev/cloudproject-visitor-images/${visitorImageName}.jpeg`, {
-
+    fetch(`/dev/cloudproject-visitor-images/${visitorImageName}.jpeg`, {
+    
     method: 'PUT',
     headers: {
       'Content-Type': 'image/jpeg'
@@ -41,7 +41,7 @@ function App() {
 
   async function authenticate(visitorImageName){
 
-    const requestUrl = 'https://4le3m8fqmg.execute-api.us-east-1.amazonaws.com/dev/employee?'+ new URLSearchParams({
+    const requestUrl = 'https://ar4d5kn2me.execute-api.us-east-1.amazonaws.com/dev/employee?'+ new URLSearchParams({
 
     objectKey: `${visitorImageName}.jpeg`
     });
